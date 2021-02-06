@@ -8,7 +8,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import Vuex from 'vuex'
 import store from './store'
 // import { codemirror } from 'vue-codemirror'
-// import base style
+// // import base style
 // import 'codemirror/lib/codemirror.css'
 
 Vue.config.productionTip = false
