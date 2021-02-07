@@ -20,7 +20,7 @@ const createLintingRule = () => ({
     emitWarning: !config.dev.showEslintErrorsInOverlay
   }
 })
-
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
@@ -77,7 +77,7 @@ module.exports = {
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       }
-    ]
+    ],
   },
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue
@@ -90,5 +90,8 @@ module.exports = {
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
-  }
+  },
+  plugins: [
+    new MonacoWebpackPlugin()
+  ]
 }
