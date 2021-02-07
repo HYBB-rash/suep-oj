@@ -2,7 +2,8 @@
   <el-container>
     <el-aside>demo</el-aside>
     <el-main>
-      <el-card style="margin-top: 5%;margin-right: 15%;">
+      <div style="margin-top: 5%;margin-right: 15%;">
+        <el-card><markdown-page></markdown-page></el-card>
         <el-card style="background-color: #F0F0F0;padding: 1%">
           <el-select v-model="language" style="margin-bottom: 1%;">
             <el-option v-for="item in languages"
@@ -17,16 +18,17 @@
           <i class="el-icon-question iconMargin"></i>
           <code-edit :language="language"></code-edit>
         </el-card>
-      </el-card>
+      </div>
     </el-main>
   </el-container>
 </template>
 
 <script>
 import CodeEdit from './components/CodeEdit'
+import MarkdownPage from './components/MarkdownPage'
 export default {
   name: 'ProblemPage',
-  components: {CodeEdit},
+  components: {MarkdownPage, CodeEdit},
   data () {
     return {
       language: null,
