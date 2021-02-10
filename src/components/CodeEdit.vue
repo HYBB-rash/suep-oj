@@ -1,5 +1,9 @@
 <template>
-  <div ref="monacoEditor" class="monaco-editor"></div>
+  <div>
+    <div ref="monacoEditor" class="monaco-editor"></div>
+    <el-button style="margin-top: 20px;margin-bottom: 10px;float: right;"
+               @click="demo()">提交运行</el-button>
+  </div>
 </template>
 
 <script>
@@ -29,7 +33,11 @@ export default {
         glyphMargin: true, // 字形边缘
         useTabStops: false,
         fontSize: 28, // 字体大小
-        autoIndent: false // 自动布局
+        overviewRulerBorder: false,
+        autoIndent: false, // 自动布局
+        minimap: {
+          enabled: false
+        }
       }
     }
   },
@@ -66,6 +74,9 @@ export default {
     changeOptions () {
       // 修改配置
       this.monacoEditor.updateOptions(this.editorOptions)
+    },
+    demo () {
+      console.log(this.monacoEditor.getValue())
     }
   },
   computed: {
@@ -75,7 +86,7 @@ export default {
         return this.value
       },
       set: function (value) {
-        // console.log(this.language)
+        console.log(this.language)
         this.$emit('input', value)
       }
     }
@@ -107,8 +118,9 @@ export default {
 <style scoped>
 .monaco-editor{
   height: 600px;
-  width: 800px;
+  width: 100%;
   position: relative;
   /*text-align: center;*/
 }
+
 </style>

@@ -220,3 +220,18 @@ export const getBlogTopList = (data) => {
     content: '秋招面经总结？秋招面经总结？秋招面经总结？秋招面经总结？'
   }]
 }
+
+export const getTestExample = (data, id) => {
+  console.log(id)
+  return [{
+    id: 1,
+    input: '10\n' +
+      '1 2 3 4 5 6 7 8 9 0\n',
+    output: '6 3 8 1 5 7 9 0 2 4'
+  }, {
+    id: 2,
+    input: '10\n' +
+      '1 2 3 4 5 6 7 8 9 0\n',
+    output: '6 3 8 1 5 7 9 0 2 4'
+  }]
+}

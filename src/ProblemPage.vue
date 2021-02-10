@@ -1,22 +1,29 @@
 <template>
   <el-container>
-    <el-aside>demo</el-aside>
-    <el-main>
-      <div style="margin-top: 5%;margin-right: 15%;">
-        <el-card><markdown-page></markdown-page></el-card>
-        <el-card style="background-color: #F0F0F0;padding: 1%">
-          <el-select v-model="language" style="margin-bottom: 1%;">
-            <el-option v-for="item in languages"
-                       :key="item.value"
-                       :label="item.label"
-                       :value="item.value">
-            </el-option>
-          </el-select>
-          <i class="el-icon-warning-outline iconMargin"></i>
-          <i class="el-icon-time iconMargin"></i>
-          <i class="el-icon-setting iconMargin"></i>
-          <i class="el-icon-question iconMargin"></i>
-          <code-edit :language="language"></code-edit>
+<!--    功能区-->
+    <el-aside style="width: 30%;margin-left: 20px;margin-top: 20px">
+      <function-pane></function-pane>
+<!--      测试区-->
+      <el-divider></el-divider>
+      <example v-for="(item) in examples"
+               :key="item.id"
+               :id="item.id"
+               :custom="true"
+               class="example"
+               :input="item.input"
+               :output="item.output"></example>
+      <example :custom="false"
+               class="example"></example>
+    </el-aside>
+    <el-main style="margin-right: 20px;">
+      <div style="margin-top: 10px;margin-left: 3%;">
+        <el-card>
+          <markdown-page></markdown-page>
+        </el-card>
+        <el-card style="background-color: #F7F7F7;padding: 1%;margin-top: 10px">
+          <edit-function-pane></edit-function-pane>
+          <code-edit :language="language"
+                     :value="code"></code-edit>
         </el-card>
       </div>
     </el-main>
@@ -26,18 +33,37 @@
 <script>
 import CodeEdit from './components/CodeEdit'
 import MarkdownPage from './components/MarkdownPage'
+import Example from './components/Example'
+import {getTestExample} from './api/api'
+import FunctionPane from './components/FunctionPane'
+import EditFunctionPane from './components/EditFunctionPane'
+
 export default {
   name: 'ProblemPage',
-  components: {MarkdownPage, CodeEdit},
+  components: {EditFunctionPane, FunctionPane, Example, MarkdownPage, CodeEdit},
   data () {
     return {
-      language: null,
+      language: 'cpp',
       languages: [
-        {value: 'python', label: 'python'},
-        {value: 'c', label: 'c'},
-        {value: 'cpp', label: 'cpp'},
-        {value: 'java', label: 'java'}]
+        {value: 'python', label: 'Python 3'},
+        {value: 'c', label: 'C (gcc)'},
+        {value: 'cpp', label: 'C++ (g++)'},
+        {value: 'java', label: 'Java'}],
+      examples: [],
+      code: null,
+      compilerTip: false,
+      historyTip: false,
+      settingTip: false,
+      helpTip: false,
+      compiler: '',
+      copyright: ''
     }
+  },
+  methods: {
+
+  },
+  created () {
+    this.examples = getTestExample(null, this.$route.params.id)
   }
 }
 </script>
@@ -46,7 +72,21 @@ export default {
   .el-main {
     padding: 0;
   }
-  .iconMargin {
-    margin: 1%;
+  .example {
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+  .card {
+    margin: 10px;
+    background-size: 100% 100%;
+    /*height: 100px;*/
+
+  }
+  .cardBackground {
+    background-size: 100% 100%;
+  }
+  .el-card {
+    min-height: 72px;
+    border-radius: 16px;
   }
 </style>
