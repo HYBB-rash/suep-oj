@@ -32,7 +32,6 @@ export default {
 
 <style scoped>
 .example {
-  margin-top: 3%;
-  margin-bottom: 3%;
+  margin: 3%;
 }
 </style>

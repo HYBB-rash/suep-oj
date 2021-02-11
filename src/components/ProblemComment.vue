@@ -1,19 +1,17 @@
 <template>
-  <el-main style="height: 620px;">
-    <el-scrollbar style="height: 100%;width: 100%;">
-      <mavon-editor :ishljs="true"
-                    :scroll-style="true"
-                    v-model="value"
-                    style="min-height: 150px;margin-bottom: 40px;"
-                    :toolbars="toolbars">
-      </mavon-editor>
-      <!--    <div>deom</div>-->
-      <el-divider>所有评论</el-divider>
-      <comment-item style="margin: 10px;"></comment-item>
-      <comment-item style="margin: 10px;"></comment-item>
-      <comment-item style="margin: 10px;"></comment-item>
-    </el-scrollbar>
-  </el-main>
+  <div>
+    <mavon-editor :ishljs="true"
+                  :scroll-style="true"
+                  v-model="value"
+                  style="min-height: 150px;margin-bottom: 40px;"
+                  :toolbars="toolbars">
+    </mavon-editor>
+    <!--    <div>deom</div>-->
+    <el-divider>所有评论</el-divider>
+    <comment-item style="margin: 10px;"></comment-item>
+    <comment-item style="margin: 10px;"></comment-item>
+    <comment-item style="margin: 10px;"></comment-item>
+  </div>
 </template>
 
 <script>

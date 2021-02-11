@@ -5,7 +5,11 @@
       <function-pane></function-pane>
 <!--      测试区-->
       <el-card>
-        <router-view></router-view>
+        <el-main style="height: 650px;">
+          <el-scrollbar style="height: 100%">
+            <router-view></router-view>
+          </el-scrollbar>
+        </el-main>
       </el-card>
     </el-aside>
     <el-main style="margin-right: 20px;">
@@ -74,5 +78,10 @@ export default {
   .el-card {
     min-height: 72px;
     border-radius: 16px;
+  }
+  .el-scrollbar__wrap {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /*height: 100%;*/
   }
 </style>

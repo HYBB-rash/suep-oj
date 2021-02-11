@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div style="min-height: 600px">
+    <div style="">
       <h1 slot="header">
         📖题解
       </h1>
@@ -80,7 +80,7 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
 .title{
