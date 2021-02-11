@@ -9,6 +9,9 @@ import Vuex from 'vuex'
 import store from './store'
 import 'github-markdown-css/github-markdown.css'
 import hljs from 'highlight.js'
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
+
 // import { codemirror } from 'vue-codemirror'
 // // import base style
 // import 'codemirror/lib/codemirror.css'
@@ -17,6 +20,8 @@ Vue.config.productionTip = false
 
 Vue.use(ElementUI)
 Vue.use(Vuex)
+Vue.use(mavonEditor)
+
 // Vue.use(codemirror)
 Vue.directive('highlight', function (el) {
   const blocks = el.querySelectorAll('pre code')

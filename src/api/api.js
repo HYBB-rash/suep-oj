@@ -235,3 +235,71 @@ export const getTestExample = (data, id) => {
     output: '6 3 8 1 5 7 9 0 2 4'
   }]
 }
+
+export const getAnswerTopList = (data, problemId, index, size) => {
+  console.log(problemId)
+  index--
+  const topList = [{
+    id: 1,
+    icon: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
+    title: '二叉搜索树的最简洁写法',
+    content: '二叉搜索树的最简洁写法？二叉搜索树的最简洁写法？二叉搜索树的最简洁写法？二叉搜索树的最简洁写法？'
+  }, {
+    id: 2,
+    icon: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
+    title: '非常简单直接爆破',
+    content: '二叉搜索树的最简洁写法？这是模板提？为啥这么简单？如果不懂就参考下我的代码？'
+  }, {
+    id: 3,
+    icon: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
+    title: '二叉搜索树的直观写法',
+    content: '二叉搜索树的直观写法？二叉搜索树的直观写法？二叉搜索树的直观写法？二叉搜索树的直观写法？'
+  }, {
+    id: 4,
+    icon: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
+    title: '非常简单直接爆破',
+    content: '二叉搜索树的最简洁写法？这是模板提？为啥这么简单？如果不懂就参考下我的代码？'
+  }, {
+    id: 5,
+    icon: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
+    title: '非常简单直接爆破',
+    content: '二叉搜索树的最简洁写法？这是模板提？为啥这么简单？如果不懂就参考下我的代码？'
+  }, {
+    id: 6,
+    icon: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
+    title: '非常简单直接爆破',
+    content: '二叉搜索树的最简洁写法？这是模板提？为啥这么简单？如果不懂就参考下我的代码？'
+  }, {
+    id: 7,
+    icon: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
+    title: '非常简单直接爆破',
+    content: '二叉搜索树的最简洁写法？这是模板提？为啥这么简单？如果不懂就参考下我的代码？'
+  }, {
+    id: 8,
+    icon: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
+    title: '非常简单直接爆破',
+    content: '二叉搜索树的最简洁写法？这是模板提？为啥这么简单？如果不懂就参考下我的代码？'
+  }, {
+    id: 9,
+    icon: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
+    title: '非常简单直接爆破',
+    content: '二叉搜索树的最简洁写法？这是模板提？为啥这么简单？如果不懂就参考下我的代码？'
+  }, {
+    id: 10,
+    icon: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
+    title: '非常简单直接爆破',
+    content: '二叉搜索树的最简洁写法？这是模板提？为啥这么简单？如果不懂就参考下我的代码？'
+  }]
+  const start = index * size
+  const end = start + size
+  const ans = {
+    count: 10,
+    list: []
+  }
+  for (let i = 0; i < 10; i++) {
+    if (i >= start && i < end) {
+      ans.list.push(topList[i])
+    }
+  }
+  return ans
+}

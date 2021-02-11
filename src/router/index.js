@@ -2,7 +2,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import ProblemListIndex from '../ProblemListIndex'
 import ProblemPage from '../ProblemPage'
-import CodeEdit from '../components/CodeEdit'
+import ProblemDetail from '../components/ProblemDetail'
+import AnswerList from '../components/AnswerList'
+import ProblemTest from '../components/ProblemTest'
+import ProblemComment from '../components/ProblemComment'
+import CommentItem from '../components/CommentItem'
 
 Vue.use(Router)
 
@@ -17,12 +21,34 @@ export default new Router({
     {
       path: '/problem/:id',
       name: 'ProblemsPage',
-      component: ProblemPage
+      component: ProblemPage,
+      children: [
+        {
+          path: '/problem/:id/detail',
+          name: 'ProblemDetail',
+          component: ProblemDetail
+        },
+        {
+          path: '/problem/:id/answer',
+          name: 'AnswerList',
+          component: AnswerList
+        },
+        {
+          path: '/problem/:id/test',
+          name: 'ProblemTest',
+          component: ProblemTest
+        },
+        {
+          path: '/problem/:id/comment',
+          name: 'ProblemComment',
+          component: ProblemComment
+        }
+      ]
     },
     {
       path: '/demo',
       name: 'demo',
-      component: CodeEdit
+      component: CommentItem
     }
   ]
 })

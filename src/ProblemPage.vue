@@ -1,26 +1,16 @@
 <template>
   <el-container>
 <!--    功能区-->
-    <el-aside style="width: 30%;margin-left: 20px;margin-top: 20px">
+    <el-aside style="width: 45%;margin-left: 20px;margin-top: 20px">
       <function-pane></function-pane>
 <!--      测试区-->
-      <el-divider></el-divider>
-      <example v-for="(item) in examples"
-               :key="item.id"
-               :id="item.id"
-               :custom="true"
-               class="example"
-               :input="item.input"
-               :output="item.output"></example>
-      <example :custom="false"
-               class="example"></example>
+      <el-card>
+        <router-view></router-view>
+      </el-card>
     </el-aside>
     <el-main style="margin-right: 20px;">
       <div style="margin-top: 10px;margin-left: 3%;">
-        <el-card>
-          <markdown-page></markdown-page>
-        </el-card>
-        <el-card style="background-color: #F7F7F7;padding: 1%;margin-top: 10px">
+        <el-card style="background-color: #F0F0F0;padding: 1%;margin-top: 10px">
           <edit-function-pane></edit-function-pane>
           <code-edit :language="language"
                      :value="code"></code-edit>
@@ -71,10 +61,6 @@ export default {
 <style>
   .el-main {
     padding: 0;
-  }
-  .example {
-    margin-top: 3%;
-    margin-bottom: 3%;
   }
   .card {
     margin: 10px;
