@@ -4,8 +4,9 @@
       <h1 slot="header">
         📖题解
       </h1>
-      <span v-for="(item, key) in blogs.list"
+      <div v-for="(item, key) in blogs.list"
             :key="item.id"
+           @click="goAnswerPage"
             style="">
       <el-row style="margin: 4%">
         <el-col :span="1"
@@ -24,7 +25,7 @@
           </el-row>
         </el-col>
       </el-row>
-    </span>
+    </div>
     </div>
     <el-pagination
       background
@@ -56,6 +57,9 @@ export default {
   methods: {
     changePage () {
       this.blogs = getAnswerTopList(null, this.$route.params.id, this.index, this.size)
+    },
+    goAnswerPage () {
+      this.$router.push({path: '/problem/1/answer/1'})
     }
   },
   created () {

@@ -12,7 +12,7 @@
 
 <script>
 import ProblemList from './components/ProblemList'
-import TopList from './components/TopList'
+import TopList from './components/ProblemTopList'
 import BlogTopList from './components/BlogTopList'
 
 export default {

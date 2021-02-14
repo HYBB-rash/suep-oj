@@ -3,23 +3,23 @@
     <el-divider></el-divider>
     <el-row>
       <el-col :span="6">
-        <el-button class="ColAndRow NavmenuButton">
-          <div class="el-icon-position iconStyle">题目详情</div>
+        <el-button class="ColAndRow NavmenuButton" @click="goDetail">
+          <div class="iconStyle">🚀题目详情</div>
         </el-button>
       </el-col>
       <el-col :span="6">
-        <el-button class="ColAndRow NavmenuButton">
-          <div class="el-icon-document iconStyle">题解</div>
+        <el-button class="ColAndRow NavmenuButton" @click="goAnswer">
+          <div class="iconStyle">📒题解</div>
         </el-button>
       </el-col>
       <el-col :span="6">
-        <el-button class="ColAndRow NavmenuButton">
-          <div class="el-icon-chat-dot-square iconStyle">讨论</div>
+        <el-button class="ColAndRow NavmenuButton" @click="goComment">
+          <div class="iconStyle">🤼‍♂️讨论</div>
         </el-button>
       </el-col>
       <el-col :span="6">
-        <el-button class="ColAndRow NavmenuButton">
-          <div class="el-icon-apple iconStyle">测试</div>
+        <el-button class="ColAndRow NavmenuButton" @click="goTest">
+          <div class="iconStyle">🕵️‍♀️测试</div>
         </el-button>
       </el-col>
     </el-row>
@@ -29,7 +29,30 @@
 
 <script>
 export default {
-  name: 'FunctionPane'
+  name: 'FunctionPane',
+  data () {
+    return {
+      rootUrl: '/problem/1'
+    }
+  },
+  methods: {
+    goDetail () {
+      const url = this.rootUrl + '/detail'
+      this.$router.push({path: url})
+    },
+    goTest () {
+      const url = this.rootUrl + '/test'
+      this.$router.push({path: url})
+    },
+    goComment () {
+      const url = this.rootUrl + '/comment'
+      this.$router.push({path: url})
+    },
+    goAnswer () {
+      const url = this.rootUrl + '/answer'
+      this.$router.push({path: url})
+    }
+  }
 }
 </script>
 

@@ -3,8 +3,9 @@
     <span slot="header" style="font-size: 14px">
       📖必读榜
     </span>
-    <span v-for="(item, key) in blogs"
+    <div v-for="(item, key) in blogs"
           :key="item.id"
+         @click="goBlog"
           style="">
       <el-row style="margin: 4%">
         <el-col :span="1"
@@ -23,7 +24,7 @@
           </el-row>
         </el-col>
       </el-row>
-    </span>
+    </div>
   </el-card>
 </template>
 
@@ -36,6 +37,12 @@ export default {
     return {
       blogs: [],
       difficultMapper: this.$store.state.mapper.difficultMap
+    }
+  },
+  methods: {
+    goBlog () {
+      console.log('demo')
+      this.$router.push({path: '/demo'})
     }
   },
   created () {

@@ -13,7 +13,7 @@
       </el-card>
     </el-aside>
     <el-main style="margin-right: 20px;">
-      <div style="margin-top: 10px;margin-left: 3%;">
+      <div style="margin-top: 40px;margin-left: 3%;">
         <el-card style="background-color: #F0F0F0;padding: 1%;margin-top: 10px">
           <edit-function-pane></edit-function-pane>
           <code-edit :language="language"

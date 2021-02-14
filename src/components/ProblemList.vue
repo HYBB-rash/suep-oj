@@ -15,6 +15,7 @@
         <span style="font-weight: bold">困难</span>
       </el-tag>
     </el-row>
+<!--    功能横栏-->
     <el-row :gutter="20" style="margin-top: 2%; margin-bottom: 5%">
         <el-col :span="8">
           <el-input type="text"
@@ -64,56 +65,46 @@
     <el-row>
       <el-card style="" shadow="always">
         <!--      展示列表-->
-        <el-row style="margin-top: 4%;">
-          <el-col :offset="1" :span="22">
-            <el-table
-              :data="tableData"
-              style="width: 100%;">
-              <el-table-column
-                width="40"
-                prop="status">
-                <template slot-scope="scope">
-                  {{statusMapper.get(scope.row.status)}}
-                </template>
-              </el-table-column>
-              <el-table-column
-                prop="name"
-                label="题目名"
-                width="300">
-              </el-table-column>
-              <el-table-column
-                prop="difficult"
-                label="难度"
-                width="90">
-                <template slot-scope="scope">
-                  {{difficultMapper.get(scope.row.difficult)}}
-                </template>
-              </el-table-column>
-              <el-table-column
-                prop="tag"
-                label="标签">
-                <template slot-scope="scope">
-                  <el-tag>{{tagsMapper.get(scope.row.tag)}}</el-tag>
-                </template>
-              </el-table-column>
-              <el-table-column
-                prop="passRate"
-                label="通过率">
-              </el-table-column>
-            </el-table>
-            <div style="text-align: center">
-              <el-pagination
-                background
-                style="margin-top: 100px"
-                layout="prev, pager, next"
-                :current-page.sync="index"
-                @current-change="changePage"
-                :page-size="size"
-                :total="tableData.length">
-              </el-pagination>
-            </div>
-          </el-col>
-        </el-row>
+        <el-table :data="tableData"
+                  @row-click="GoToProblem"
+                  style="width: 100%;">
+          <el-table-column width="40"
+                           prop="status">
+            <template slot-scope="scope">
+              {{statusMapper.get(scope.row.status)}}
+            </template>
+          </el-table-column>
+          <el-table-column prop="name"
+                           label="题目名"
+                           width="300">
+          </el-table-column>
+          <el-table-column prop="difficult"
+                           label="难度"
+                           width="90">
+            <template slot-scope="scope">
+              {{difficultMapper.get(scope.row.difficult)}}
+            </template>
+          </el-table-column>
+          <el-table-column prop="tag"
+                           label="标签">
+            <template slot-scope="scope">
+              <el-tag>{{tagsMapper.get(scope.row.tag)}}</el-tag>
+            </template>
+          </el-table-column>
+          <el-table-column prop="passRate"
+                           label="通过率">
+          </el-table-column>
+        </el-table>
+        <div style="text-align: center">
+          <el-pagination background
+                         style="margin-top: 100px"
+                         layout="prev, pager, next"
+                         :current-page.sync="index"
+                         @current-change="changePage"
+                         :page-size="size"
+                         :total="tableData.length">
+          </el-pagination>
+        </div>
       </el-card>
     </el-row>
   </div>
@@ -145,9 +136,12 @@ export default {
   methods: {
     changePage () {},
     searchProblems () {
-      // console.log(this.searchDifficult + ' ' + this.searchTag + ' ' + this.searchStatus)
       this.tableData = searchAllProblemStatus(null, this.index, this.size, null,
         this.searchName, this.searchTag, this.searchDifficult, this.searchStatus)
+    },
+    GoToProblem (row) {
+      // 表格事件，点击行后自动跳转到对应的页面
+      this.$router.push({path: '/problem/' + row.id + '/detail'})
     }
   },
   created () {

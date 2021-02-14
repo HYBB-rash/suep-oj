@@ -6,7 +6,8 @@ import ProblemDetail from '../components/ProblemDetail'
 import AnswerList from '../components/AnswerList'
 import ProblemTest from '../components/ProblemTest'
 import ProblemComment from '../components/ProblemComment'
-import CommentItem from '../components/CommentItem'
+// import CommentItem from '../components/CommentItem'
+import AnswerPage from '../components/AnswerPage'
 
 Vue.use(Router)
 
@@ -42,13 +43,18 @@ export default new Router({
           path: '/problem/:id/comment',
           name: 'ProblemComment',
           component: ProblemComment
+        },
+        {
+          path: '/problem/:id/answer/:aid',
+          name: 'AnswerPage',
+          component: AnswerPage
         }
       ]
     },
     {
       path: '/demo',
       name: 'demo',
-      component: CommentItem
+      component: AnswerPage
     }
   ]
 })
