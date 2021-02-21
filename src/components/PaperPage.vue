@@ -10,7 +10,7 @@
 import MarkdownPage from './MarkdownPage'
 import ProblemComment from './ProblemComment'
 export default {
-  name: 'AnswerPage',
+  name: 'PaperPage',
   components: {ProblemComment, MarkdownPage}
 }
 </script>

@@ -1,6 +1,7 @@
 <template>
   <div>
     <!--      条件搜索输入-->
+<!--    标签幸喜-->
     <el-row>
       <el-tag color="#337AB7" effect="dark" size="small">
         <span style="font-weight: bold">已解决</span>
@@ -62,9 +63,9 @@
           </el-select>
         </el-col>
     </el-row>
+    <!--      展示列表-->
     <el-row>
       <el-card style="" shadow="always">
-        <!--      展示列表-->
         <el-table :data="tableData"
                   @row-click="GoToProblem"
                   style="width: 100%;">

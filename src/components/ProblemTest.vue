@@ -25,7 +25,9 @@ export default {
     }
   },
   created () {
-    this.examples = getTestExample(null, this.$route.params.id)
+    console.log(this.$route.params.id)
+    console.log('标记')
+    this.examples = getTestExample({pid: this.$route.params.id}).ex
   }
 }
 </script>

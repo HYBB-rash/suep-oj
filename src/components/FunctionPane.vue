@@ -30,9 +30,10 @@
 <script>
 export default {
   name: 'FunctionPane',
+  props: ['pid'],
   data () {
     return {
-      rootUrl: '/problem/1'
+      rootUrl: '/problem/' + this.$props.pid
     }
   },
   methods: {
