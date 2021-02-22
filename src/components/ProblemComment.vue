@@ -7,9 +7,6 @@
                   :toolbars="toolbars">
     </mavon-editor>
     <el-divider>所有评论</el-divider>
-<!--    <comment-item style="margin: 10px;"></comment-item>-->
-<!--    <comment-item style="margin: 10px;"></comment-item>-->
-<!--    <comment-item style="margin: 10px;"></comment-item>-->
     <div v-for="item in this.comments" :key="item.id">
       <comment-item :comment="item" style="margin: 10px"></comment-item>
     </div>

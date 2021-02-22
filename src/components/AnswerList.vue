@@ -6,7 +6,7 @@
       </h1>
       <div v-for="(item, key) in blogs.list"
             :key="item.id"
-           @click="goAnswerPage"
+           @click="goAnswerPage(item.id)"
             style="">
       <el-row style="margin: 4%">
         <el-col :span="1"
@@ -58,8 +58,8 @@ export default {
     changePage () {
       this.blogs = getAnswerTopList(null, this.$route.params.id, this.index, this.size)
     },
-    goAnswerPage () {
-      this.$router.push({path: '/problem/1/answer/1'})
+    goAnswerPage (aid) {
+      this.$router.push({path: '/problem/1/answer/' + aid})
     }
   },
   created () {

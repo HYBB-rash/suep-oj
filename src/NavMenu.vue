@@ -13,10 +13,12 @@
         <i class="el-icon-bank-card" style="font-size: 35px"></i>
         <span class="menu-item" style="font-weight: bold;position: absolute">SUEPOJ</span>
       </el-col>
-      <el-col :span="1" class="menu-item">题库</el-col>
+      <el-col :span="1" class="menu-item">
+        <div @click="GoToProblem">题库</div>
+      </el-col>
       <el-col :span="1" class="menu-item">主页</el-col>
       <el-col :span="1" class="menu-item">讨论</el-col>
-      <el-col :span="1" class="menu-item">未定</el-col>
+      <el-col :span="1" class="menu-item">管理</el-col>
       <el-col :offset="10" :span="2" class="menu-item" style="padding-top: 5px">
         <el-button style="background: #ffffff;"
                    type="success"
@@ -25,12 +27,6 @@
       <el-col  :span="1" class="menu-item">登录</el-col>
       <el-col :span="1" class="menu-item">注册</el-col>
     </el-row>
-<!--    <i class="el-icon-switch-button" style="float:right;font-size: 20px;color: #222;padding: 10px"></i>-->
-<!--    <span style="float: right; padding: 0.5%; font-size: 12px; margin: 0.5%">hyong</span>-->
-<!--    <i class="el-icon-user" style="float: right;font-size: 20px;color: #222222;padding: 0.5%"></i>-->
-<!--    <span style="position: absolute; padding-top: 20px; right: 43%; font-size: 20px; font-weight: bold">-->
-<!--      今天放假不刷题，要刷就刷算法题-->
-<!--    </span>-->
   </el-menu>
 </template>
 
@@ -48,6 +44,10 @@ export default {
     }
   },
   methods: {
+    GoToProblem () {
+      console.log('demo')
+      this.$router.push({path: '/'})
+    }
   }
 }
 </script>
