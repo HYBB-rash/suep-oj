@@ -12,7 +12,7 @@ import BlogPage from '../BlogPage'
 import UserPage from '../UserPage'
 import MyProblemList from '../components/MyProblemList'
 import MySentList from '../components/MySentList'
-import Editor from '../components/Editor'
+import PaperEdit from '../PaperEdit'
 
 Vue.use(Router)
 
@@ -80,8 +80,8 @@ export default new Router({
     },
     {
       path: '/edit',
-      name: 'Editor',
-      component: Editor
+      name: 'PaperEdit',
+      component: PaperEdit
     }
   ]
 })
