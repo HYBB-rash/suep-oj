@@ -170,6 +170,7 @@ export const getTopList = (data) => {
 
 // 获取博客热榜榜单
 export const getBlogTopList = (data) => {
+  console.log(data)
   return [{
     id: 1,
     icon: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',

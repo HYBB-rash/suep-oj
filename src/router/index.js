@@ -6,13 +6,14 @@ import ProblemDetail from '../components/ProblemDetail'
 import AnswerList from '../components/AnswerList'
 import ProblemTest from '../components/ProblemTest'
 import ProblemComment from '../components/ProblemComment'
-// import CommentItem from '../components/CommentItem'
 import PaperPage from '../components/PaperPage'
 import BlogPage from '../BlogPage'
 import UserPage from '../UserPage'
 import MyProblemList from '../components/MyProblemList'
 import MySentList from '../components/MySentList'
 import PaperEdit from '../PaperEdit'
+import PaperIndex from '../PaperIndex'
+import ManagePage from '../ManagePage'
 
 Vue.use(Router)
 
@@ -82,6 +83,16 @@ export default new Router({
       path: '/edit',
       name: 'PaperEdit',
       component: PaperEdit
+    },
+    {
+      path: '/blog',
+      name: 'PaperIndex',
+      component: PaperIndex
+    },
+    {
+      path: '/manager',
+      name: 'ManagePage',
+      component: ManagePage
     }
   ]
 })

@@ -19,11 +19,16 @@
       <el-col :span="1" class="menu-item">
         <div @click="GoToUserPage">主页</div>
       </el-col>
-      <el-col :span="1" class="menu-item">讨论</el-col>
-      <el-col :span="1" class="menu-item">管理</el-col>
+      <el-col :span="1" class="menu-item">
+        <div @click="GoToPaperEdit">博客</div>
+      </el-col>
+      <el-col :span="1" class="menu-item">
+        <div @click="GoToManage">管理</div>
+      </el-col>
       <el-col :offset="10" :span="2" class="menu-item" style="padding-top: 5px">
         <el-button style="background: #ffffff;"
                    type="success"
+                   @click="GoToPaperIndex"
                    size="small" plain>大家说</el-button>
       </el-col>
       <el-col  :span="1" class="menu-item">登录</el-col>
@@ -51,6 +56,15 @@ export default {
     },
     GoToUserPage () {
       this.$router.push({path: '/user/page/:id'})
+    },
+    GoToPaperIndex () {
+      this.$router.push({path: '/blog'})
+    },
+    GoToPaperEdit () {
+      this.$router.push({path: '/edit'})
+    },
+    GoToManage () {
+      this.$router.push({path: '/manager'})
     }
   }
 }
