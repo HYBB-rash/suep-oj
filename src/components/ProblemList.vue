@@ -1,21 +1,7 @@
 <template>
   <div>
+    <tag-bar></tag-bar>
     <!--      条件搜索输入-->
-<!--    标签幸喜-->
-    <el-row>
-      <el-tag color="#337AB7" effect="dark" size="small">
-        <span style="font-weight: bold">已解决</span>
-      </el-tag> -
-      <el-tag color="#5CB85C" effect="dark" size="small">
-        <span style="font-weight: bold">简单</span>
-      </el-tag>
-      <el-tag color="#F0AD4E" effect="dark" size="small">
-        <span style="font-weight: bold">中等</span>
-      </el-tag>
-      <el-tag color="#D9534F" effect="dark" size="small">
-        <span style="font-weight: bold">困难</span>
-      </el-tag>
-    </el-row>
 <!--    功能横栏-->
     <el-row :gutter="20" style="margin-top: 2%; margin-bottom: 5%">
         <el-col :span="8">
@@ -114,8 +100,10 @@
 <script>
 import 'element-ui/lib/theme-chalk/index.css'
 import { getAllProblemTags, getAllProblemDifficult, getAllProblemStatusByUserId, searchAllProblemStatus } from '../api/api'
+import TagBar from './TagBar.vue'
 
 export default {
+  components: { TagBar },
   name: 'ProblemList',
   data () {
     return {

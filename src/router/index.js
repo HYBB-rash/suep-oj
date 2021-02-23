@@ -9,6 +9,10 @@ import ProblemComment from '../components/ProblemComment'
 // import CommentItem from '../components/CommentItem'
 import PaperPage from '../components/PaperPage'
 import BlogPage from '../BlogPage'
+import UserPage from '../UserPage'
+import MyProblemList from '../components/MyProblemList'
+import MySentList from '../components/MySentList'
+import Editor from '../components/Editor'
 
 Vue.use(Router)
 
@@ -56,6 +60,28 @@ export default new Router({
       path: '/blog/:id',
       name: 'blog',
       component: BlogPage
+    },
+    {
+      path: '/user/page/:id',
+      name: 'user',
+      component: UserPage,
+      children: [
+        {
+          path: '/user/page/:id/problem',
+          name: 'MyProblemList',
+          component: MyProblemList
+        },
+        {
+          path: '/user/page/:id/sent',
+          name: 'MySentList',
+          component: MySentList
+        }
+      ]
+    },
+    {
+      path: '/edit',
+      name: 'Editor',
+      component: Editor
     }
   ]
 })

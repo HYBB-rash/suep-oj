@@ -2418,3 +2418,331 @@ export const getPaperContent = (data) => {
     if (item.id === Number(data.aid)) return item
   }
 }
+
+// 返回文章列表
+export const getPaperList = (data) => {
+  console.log(data)
+  const PaperList = [
+    {
+      uid: 1,
+      paperList: [
+        {
+          id: 1,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 2,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 3,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 4,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 5,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 6,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        }
+      ]
+    },
+    {
+      uid: 2,
+      paperList: [
+        {
+          id: 1,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 2,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 3,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 4,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 5,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 6,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        }
+      ]
+    },
+    {
+      uid: 3,
+      paperList: [
+        {
+          id: 1,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 2,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 3,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 4,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 5,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 6,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        }
+      ]
+    },
+    {
+      uid: 4,
+      paperList: [
+        {
+          id: 1,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 2,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 3,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 4,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 5,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 6,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        }
+      ]
+    },
+    {
+      uid: 5,
+      paperList: [
+        {
+          id: 1,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 2,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 3,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 4,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 5,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 6,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        }
+      ]
+    },
+    {
+      uid: 6,
+      paperList: [
+        {
+          id: 1,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 2,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 3,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 4,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 5,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        },
+        {
+          id: 6,
+          name: 'hyong',
+          watch: 666,
+          love: 666,
+          comment: 666,
+          status: 1
+        }
+      ]
+    }
+  ]
+  for (const item of PaperList) {
+    if (item.uid === Number(data.id)) return item.paperList
+  }
+}

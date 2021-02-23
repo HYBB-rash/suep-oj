@@ -16,7 +16,9 @@
       <el-col :span="1" class="menu-item">
         <div @click="GoToProblem">题库</div>
       </el-col>
-      <el-col :span="1" class="menu-item">主页</el-col>
+      <el-col :span="1" class="menu-item">
+        <div @click="GoToUserPage">主页</div>
+      </el-col>
       <el-col :span="1" class="menu-item">讨论</el-col>
       <el-col :span="1" class="menu-item">管理</el-col>
       <el-col :offset="10" :span="2" class="menu-item" style="padding-top: 5px">
@@ -45,8 +47,10 @@ export default {
   },
   methods: {
     GoToProblem () {
-      console.log('demo')
       this.$router.push({path: '/'})
+    },
+    GoToUserPage () {
+      this.$router.push({path: '/user/page/:id'})
     }
   }
 }
