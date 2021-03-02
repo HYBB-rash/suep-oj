@@ -40,7 +40,7 @@ export default {
   components: {EditFunctionPane, FunctionPane, Example, MarkdownPage, CodeEdit},
   data () {
     return {
-      language: 'cpp',
+      language: 'java',
       languages: [
         {value: 'python', label: 'Python 3'},
         {value: 'c', label: 'C (gcc)'},

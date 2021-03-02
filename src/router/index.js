@@ -14,6 +14,8 @@ import MySentList from '../components/MySentList'
 import PaperEdit from '../PaperEdit'
 import PaperIndex from '../PaperIndex'
 import ManagePage from '../ManagePage'
+import Login from '../Login'
+import Regis from '../Regis'
 
 Vue.use(Router)
 
@@ -93,6 +95,16 @@ export default new Router({
       path: '/manager',
       name: 'ManagePage',
       component: ManagePage
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/regis',
+      name: 'Regis',
+      component: Regis
     }
   ]
 })

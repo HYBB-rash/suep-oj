@@ -22,6 +22,12 @@ Vue.use(ElementUI)
 Vue.use(Vuex)
 Vue.use(mavonEditor)
 
+var axios = require('axios')
+axios.defaults.baseURL = 'http://192.168.196.131:8433/api'
+axios.defaults.withCredentials = true
+Vue.prototype.$axios = axios
+
+Vue.config.productionTip = false
 // Vue.use(codemirror)
 Vue.directive('highlight', function (el) {
   const blocks = el.querySelectorAll('pre code')
