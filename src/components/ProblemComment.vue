@@ -29,10 +29,5 @@ export default {
 }
 </script>
 
-<style>
-  .el-scrollbar__wrap {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    /*height: 100%;*/
-  }
+<style scoped>
 </style>

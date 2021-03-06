@@ -1,10 +1,10 @@
 <template>
   <el-container>
 <!--    功能区-->
-    <el-aside style="width: 45%;margin-left: 20px;margin-top: 20px">
+    <el-aside :style="style.aside">
       <function-pane :pid="this.$route.params.id"></function-pane>
 <!--      测试区-->
-      <el-card>
+      <el-card :style="style.elCard">
         <el-main style="height: 650px;">
           <el-scrollbar style="height: 100%">
 <!--            根据用户选择刷新功能面板-->
@@ -14,9 +14,9 @@
       </el-card>
     </el-aside>
 <!--    编辑区-->
-    <el-main style="margin-right: 20px;">
-      <div style="margin-top: 40px;margin-left: 3%;">
-        <el-card style="background-color: #F0F0F0;padding: 1%;margin-top: 10px">
+    <el-main style="margin-right: 20px;padding: 0">
+      <div style="margin-top: 20px;margin-left: 3%;">
+        <el-card :style="style.editCard">
 <!--          编辑功能按钮-->
           <edit-function-pane></edit-function-pane>
 <!--          编辑框,利用开源vscode的编辑器-->
@@ -53,11 +53,22 @@ export default {
       settingTip: false,
       helpTip: false,
       compiler: '',
-      copyright: ''
+      copyright: '',
+      style: {
+        aside: {width: '45%', marginLeft: '20px', marginRight: '20px'},
+        elScrollbar__wrap: {overflowY: 'scroll', overflowX: 'hidden'},
+        elCard: {minHeight: '72px', borderRadius: '16px'},
+        card: {margin: '10px', backgroundSize: '100% 100%'},
+        editCard: {
+          backgroundColor: '#F0F0F0',
+          padding: '1%',
+          minHeight: '72px',
+          borderRadius: '16px'
+        }
+      }
     }
   },
   methods: {
-
   },
   created () {
   }
@@ -65,25 +76,4 @@ export default {
 </script>
 
 <style>
-  .el-main {
-    padding: 0;
-  }
-  .card {
-    margin: 10px;
-    background-size: 100% 100%;
-    /*height: 100px;*/
-
-  }
-  .cardBackground {
-    background-size: 100% 100%;
-  }
-  .el-card {
-    min-height: 72px;
-    border-radius: 16px;
-  }
-  .el-scrollbar__wrap {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    /*height: 100%;*/
-  }
 </style>

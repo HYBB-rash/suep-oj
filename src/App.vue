@@ -4,7 +4,7 @@
       <el-header height="40px" style="padding: 0;">
         <nav-menu></nav-menu>
       </el-header>
-      <el-main>
+      <el-main :style="style.elMain">
         <router-view/>
       </el-main>
     </el-container>
@@ -16,6 +16,13 @@ import NavMenu from './NavMenu'
 export default {
   name: 'App',
   components: {NavMenu},
+  data () {
+    return {
+      style: {
+        elMain: {padding: '0', marginTop: '10px'}
+      }
+    }
+  },
   methods: {
   }
 }
@@ -35,5 +42,9 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
+  }
+  .el-scrollbar__wrap {
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 </style>

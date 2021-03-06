@@ -5,34 +5,32 @@
     background-color="#FFFFFF"
     text-color="#222"
     style="min-height: 40px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);">
-<!--    <el-menu-item v-for="(item, i) in navList" :key="i" :index="item.name">-->
-<!--      {{ item.navItem }}-->
-<!--    </el-menu-item>-->
     <el-row :gutter="20">
       <el-col :offset="2" :span="2">
         <i class="el-icon-bank-card" style="font-size: 35px"></i>
-        <span class="menu-item" style="font-weight: bold;position: absolute">SUEPOJ</span>
+        <span :style="style.logo">SUEPOJ</span>
       </el-col>
-      <el-col :span="1" class="menu-item">
+      <el-col :span="1" :style="style.menuItem">
         <div @click="GoToProblem">题库</div>
       </el-col>
-      <el-col :span="1" class="menu-item">
+      <el-col :span="1" :style="style.menuItem">
         <div @click="GoToUserPage">主页</div>
       </el-col>
-      <el-col :span="1" class="menu-item">
+      <el-col :span="1" :style="style.menuItem">
         <div @click="GoToPaperEdit">博客</div>
       </el-col>
-      <el-col :span="1" class="menu-item">
+      <el-col :span="1" :style="style.menuItem">
         <div @click="GoToManage">管理</div>
       </el-col>
-      <el-col :offset="10" :span="2" class="menu-item" style="padding-top: 5px">
+      <el-col :offset="10" :span="2">
         <el-button style="background: #ffffff;"
+                   :style="style.button"
                    type="success"
                    @click="GoToPaperIndex"
                    size="small" plain>大家说</el-button>
       </el-col>
-      <el-col  :span="1" class="menu-item">登录</el-col>
-      <el-col :span="1" class="menu-item">注册</el-col>
+      <el-col  :span="1" :style="style.menuItem">登录</el-col>
+      <el-col :span="1" :style="style.menuItem">注册</el-col>
     </el-row>
   </el-menu>
 </template>
@@ -47,7 +45,28 @@ export default {
         {name: '/userHome/', navItem: '大家说'},
         {name: '/editPage', navItem: '我的主页'},
         {name: '/userAdminHome/', navItem: '后台管理'}
-      ]
+      ],
+      style: {
+        menuItem: {
+          fontSize: '13px',
+          position: 'relative',
+          paddingTop: '10px',
+          paddingLeft: '10px'
+        },
+        logo: {
+          fontSize: '13px',
+          paddingTop: '10px',
+          paddingLeft: '10px',
+          fontWeight: 'bold',
+          position: 'absolute'
+        },
+        button: {
+          fontSize: '14px',
+          background: '#ffffff',
+          position: 'relative',
+          marginTop: '2px'
+        }
+      }
     }
   },
   methods: {
@@ -70,20 +89,8 @@ export default {
 }
 </script>
 
-<style>
-a{
-  text-decoration: none;
-}
-.el-menu--horizontal>.el-menu-item {
-  min-height: 30px;
-}
-span{
-  pointer-events: none;
-}
-.menu-item {
-  font-size: 13px;
-  position: relative;
-  padding-top: 10px;
-  padding-left: 10px;
-}
+<style scoped>
+  a{
+    text-decoration: none;
+  }
 </style>

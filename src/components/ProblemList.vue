@@ -6,6 +6,7 @@
     <el-row :gutter="20" style="margin-top: 2%; margin-bottom: 5%">
         <el-col :span="8">
           <el-input type="text"
+                    class="input"
                     v-model="searchName"
                     @change="searchProblems"
                     placeholder="搜索题目"
@@ -14,6 +15,7 @@
         </el-col>
         <el-col :offset="2" :span="5">
           <el-select v-model="searchTag"
+                     :style="style.elInput__inner"
                      @change="searchProblems"
                      placeholder="题目类型">
             <el-option
@@ -26,6 +28,7 @@
         </el-col>
         <el-col :span="4">
           <el-select v-model="searchDifficult"
+                     :style="style.elInput__inner"
                      @change="searchProblems"
                      placeholder="难度">
             <el-option
@@ -38,6 +41,7 @@
         </el-col>
         <el-col :span="5">
           <el-select v-model="searchStatus"
+                     :style="style.elInput__inner"
                      @change="searchProblems"
                      placeholder="完成情况">
             <el-option
@@ -51,7 +55,7 @@
     </el-row>
     <!--      展示列表-->
     <el-row>
-      <el-card style="" shadow="always">
+      <el-card :style="style.elCard" shadow="always">
         <el-table :data="tableData"
                   @row-click="GoToProblem"
                   style="width: 100%;">
@@ -119,7 +123,16 @@ export default {
       size: 8,
       statusMapper: this.$store.state.mapper.statusMap,
       tagsMapper: this.$store.state.mapper.tagsMap,
-      difficultMapper: this.$store.state.mapper.difficultMap
+      difficultMapper: this.$store.state.mapper.difficultMap,
+      style: {
+        elInput__inner: {
+          borderRadius: '20px'
+        },
+        elCard: {
+          borderRadius: '16px',
+          boxShadow: '0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)'
+        }
+      }
     }
   },
   methods: {
@@ -143,8 +156,8 @@ export default {
 }
 </script>
 
-<style>
-  .el-input__inner{
+<style scoped>
+   input >>> .el-input__inner{
     border-radius: 20px;
   }
   .el-card{

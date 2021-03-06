@@ -1,14 +1,14 @@
 <template>
-  <el-container style="margin-left: 8%; margin-right: 8%">
+  <el-container :style="style.container">
     <el-main>
 <!--      主页的题库列表-->
       <problem-list></problem-list>
     </el-main>
-    <el-aside>
+    <el-aside :style="style.aside">
 <!--      必刷榜榜单-->
       <top-list></top-list>
 <!--      博客排行榜-->
-      <blog-top-list style="margin-top: 4%"></blog-top-list>
+      <blog-top-list :style="style.blogTopList"></blog-top-list>
     </el-aside>
   </el-container>
 </template>
@@ -22,7 +22,13 @@ export default {
   name: 'ProblemListIndex',
   components: {ProblemList, TopList, BlogTopList},
   data () {
-    return {}
+    return {
+      style: {
+        container: {marginLeft: '8%', marginRight: '8%'},
+        aside: {marginTop: '10px'},
+        blogTopList: {marginTop: '4%'}
+      }
+    }
   },
   methods: {
   }

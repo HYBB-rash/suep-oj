@@ -1,5 +1,5 @@
 <template>
-  <el-card style="margin-left: 5%; margin-right: 5%;">
+  <el-card :style="style.card">
     <paper-page></paper-page>
   </el-card>
 </template>
@@ -8,7 +8,17 @@
 import PaperPage from './components/PaperPage'
 export default {
   name: 'BlogPage',
-  components: {PaperPage}
+  components: {PaperPage},
+  data () {
+    return {
+      style: {
+        card: {
+          marginLeft: '5%',
+          marginRight: '5%'
+        }
+      }
+    }
+  }
 }
 </script>
 

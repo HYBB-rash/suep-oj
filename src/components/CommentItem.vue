@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-row class="VerticalCenter">
+    <el-row :style="style.VerticalCenter">
       <el-col :span="12">
         <el-row>
           <el-col :span="4">
@@ -10,7 +10,7 @@
                   :span="4">{{comment.name}}</el-col>
         </el-row>
       </el-col>
-      <el-col :offset="8" :span="4" class="VerticalCenter">
+      <el-col :offset="8" :span="4" :style="style.VerticalCenter">
         <div style="font-size: 14px; color: #C4C4C6">{{comment.time}}</div>
       </el-col>
     </el-row>
@@ -24,10 +24,10 @@
     <div style="margin-top: 5px;margin-bottom: 10px;">
 <!--      评论元素下方的案件-->
       <el-row :gutter="20">
-        <span class="functionStyle">😆{{comment.love}}</span>
-        <span class="functionStyle">😡踩</span>
-        <span class="functionStyle">👁‍🗨查看回复</span>
-        <span class="functionStyle">🔠回复</span>
+        <span :style="style.functionStyle">😆{{comment.love}}</span>
+        <span :style="style.functionStyle">😡踩</span>
+        <span :style="style.functionStyle">👁‍🗨查看回复</span>
+        <span :style="style.functionStyle">🔠回复</span>
       </el-row>
     </div>
   </div>
@@ -41,6 +41,23 @@ export default {
   props: ['comment'],
   data () {
     return {
+      style: {
+        elScrollbar__wrap: {
+          overflowY: 'scroll',
+          overflowX: 'hidden',
+          height: '100%'
+        },
+        functionStyle: {
+          fontSize: '14px',
+          color: '#8c8c8c',
+          marginRight: '10px'
+        },
+        VerticalCenter: {
+          height: '20px',
+          paddingTop: '10px',
+          marginBottom: '20px'
+        }
+      }
     }
   },
   created () {
@@ -49,21 +66,5 @@ export default {
 }
 </script>
 
-<style>
-  .VerticalCenter {
-    height: 20px;
-    padding-top: 10px;
-    margin-bottom: 20px;
-    /*display: flex; justify-content: center; flex-direction: column;*/
-  }
-  .el-scrollbar__wrap {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 100%;
-  }
-  .functionStyle {
-    font-size: 14px;
-    color: #8C8C8C;
-    margin-right: 10px;
-  }
+<style scoped>
 </style>
