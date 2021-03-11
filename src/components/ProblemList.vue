@@ -15,6 +15,7 @@
         </el-col>
         <el-col :offset="2" :span="5">
           <el-select v-model="searchTag"
+                     class="input"
                      :style="style.elInput__inner"
                      @change="searchProblems"
                      placeholder="题目类型">
@@ -28,6 +29,7 @@
         </el-col>
         <el-col :span="4">
           <el-select v-model="searchDifficult"
+                     class="input"
                      :style="style.elInput__inner"
                      @change="searchProblems"
                      placeholder="难度">
@@ -41,6 +43,7 @@
         </el-col>
         <el-col :span="5">
           <el-select v-model="searchStatus"
+                     class="input"
                      :style="style.elInput__inner"
                      @change="searchProblems"
                      placeholder="完成情况">
@@ -157,7 +160,7 @@ export default {
 </script>
 
 <style scoped>
-   input >>> .el-input__inner{
+   .input >>> .el-input__inner{
     border-radius: 20px;
   }
   .el-card{

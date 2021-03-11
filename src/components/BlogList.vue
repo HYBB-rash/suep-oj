@@ -74,7 +74,6 @@ export default {
   },
   methods: {
     goBlog () {
-      console.log('demo')
       this.$router.push({path: '/demo'})
     },
     changePage () {
